@@ -5,6 +5,11 @@ document.getElementById('calculator-form').addEventListener('submit', function(e
     const waist = parseFloat(document.getElementById('waist').value);
     const hip = parseFloat(document.getElementById('hip').value);
 
+    if (isNaN(shoulder) || isNaN(waist) || isNaN(hip)) {
+        alert("Please enter valid numbers for all fields.");
+        return;
+    }
+
     let bodyType = '';
     let bodyImage = '';
     let colorSuggestion = '';
@@ -25,4 +30,18 @@ document.getElementById('calculator-form').addEventListener('submit', function(e
         bodyImage = 'images/hourglass.png';
         colorSuggestion = 'Monochromatic & bold shades (Red, Teal, Royal Blue).';
         occasionSuggestion = 'Perfect for weddings, date nights, and business meetings.';
+    } else {
+        bodyType = 'Rectangle';
+        bodyImage = 'images/rectangle.png';
+        colorSuggestion = 'Contrast & bright shades (Coral, Emerald, Prints).';
+        occasionSuggestion = 'Great for outdoor events, beachwear, and casual wear.';
     }
+
+    document.getElementById('body-type-text').innerText = `Your body type is: ${bodyType}`;
+    document.getElementById('color-suggestions').innerText = `Recommended Colors: ${colorSuggestion}`;
+    document.getElementById('occasion-suggestions').innerText = `Best Occasions: ${occasionSuggestion}`;
+
+    const bodyImageElement = document.getElementById('body-type-image');
+    bodyImageElement.src = bodyImage;
+    bodyImageElement.style.display = 'block';
+});
