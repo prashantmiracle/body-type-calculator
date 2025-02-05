@@ -1,23 +1,23 @@
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f1f1f1;  /* Light background color */
+    background-color: #e9f7fd;  /* Light blue background for modern, fresh feel */
     margin: 0;
     padding: 0;
     color: #333;
     line-height: 1.6;
 }
 
-/* Main Container */
+/* Main Container with Frame Design */
 .main-container {
     max-width: 900px;
     margin: 50px auto;
     padding: 40px;
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid #1877f2;  /* Blue frame for a clean design */
     transition: all 0.3s ease;
-    border: 1px solid #ddd;
 }
 
 /* Header Section */
@@ -28,7 +28,7 @@ header {
 
 header h1 {
     font-size: 2.5em;
-    color: #0A74DA;  /* Blue for a masculine feel */
+    color: #1877f2;  /* Masculine blue for the header */
     margin-bottom: 10px;
     font-weight: bold;
 }
@@ -66,13 +66,13 @@ input, select {
 }
 
 input:focus, select:focus {
-    border-color: #0A74DA;  /* Blue focus border */
+    border-color: #1877f2;  /* Blue focus border */
     outline: none;
 }
 
 /* Button Styling */
 button {
-    background-color: #0A74DA; /* Masculine blue */
+    background-color: #1877f2; /* Masculine blue */
     color: white;
     padding: 15px;
     font-size: 1.2em;
