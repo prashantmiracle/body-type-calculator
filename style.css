@@ -1,20 +1,20 @@
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5; /* Facebook's background color */
+    background-color: #f1f1f1;  /* Light background color */
     margin: 0;
     padding: 0;
-    color: #1c1e21; /* Facebook text color */
+    color: #333;
     line-height: 1.6;
 }
 
 /* Main Container */
 .main-container {
-    max-width: 800px;
-    margin: 40px auto;
+    max-width: 900px;
+    margin: 50px auto;
     padding: 40px;
     background-color: #ffffff;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     border: 1px solid #ddd;
@@ -32,14 +32,14 @@ header {
 
 header h1 {
     font-size: 2.5em;
-    color: #1877f2; /* Facebook Blue */
+    color: #0A74DA;  /* Blue for a masculine feel */
     margin-bottom: 10px;
     font-weight: bold;
 }
 
 header p {
     font-size: 1.2em;
-    color: #777;
+    color: #444;
     line-height: 1.5;
 }
 
@@ -58,36 +58,37 @@ header p {
 
 label {
     font-weight: 600;
-    color: #444;
+    color: #333;
 }
 
 input, select {
-    padding: 12px;
+    padding: 14px;
     font-size: 1.1em;
-    border: 1px solid #ccc;
+    border: 2px solid #ddd;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 input:focus, select:focus {
-    border-color: #1877f2; /* Facebook Blue */
+    border-color: #0A74DA;  /* Blue focus border */
     outline: none;
 }
 
+/* Button Styling */
 button {
-    background-color: #1877f2; /* Facebook Blue */
+    background-color: #0A74DA;  /* Masculine blue */
     color: white;
     padding: 15px;
     font-size: 1.2em;
     border: none;
     cursor: pointer;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #165e9e; /* Darker Blue for Hover */
+    background-color: #006bb3;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -117,6 +118,11 @@ button:hover {
     max-width: 400px;
     width: 100%;
     border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.body-type-image:hover {
+    transform: scale(1.05);
 }
 
 /* Mobile Responsiveness */
