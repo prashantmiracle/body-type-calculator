@@ -1,13 +1,14 @@
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f8f8;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     color: #333;
     line-height: 1.6;
 }
 
+/* Main Container */
 .main-container {
     max-width: 900px;
     margin: 40px auto;
@@ -22,7 +23,7 @@ body {
     box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Header Styles */
+/* Header */
 header {
     text-align: center;
     margin-bottom: 20px;
@@ -30,7 +31,7 @@ header {
 
 header h1 {
     font-size: 2.5em;
-    color: #1e7e34;
+    color: #28a745;
     margin-bottom: 10px;
 }
 
@@ -39,7 +40,7 @@ header p {
     color: #777;
 }
 
-/* Form Section Styles */
+/* Form Section */
 .form-container {
     display: flex;
     flex-direction: column;
@@ -85,7 +86,7 @@ button:hover {
     background-color: #218838;
 }
 
-/* Result Section Styles */
+/* Result Section */
 .result-container {
     text-align: center;
     margin-top: 40px;
@@ -99,6 +100,13 @@ button:hover {
     line-height: 1.8;
 }
 
+#colorRecommendation {
+    font-size: 1.2em;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
 .body-type-image {
     margin-top: 20px;
     width: 100%;
@@ -106,7 +114,7 @@ button:hover {
     border-radius: 8px;
 }
 
-/* Responsive Design */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .main-container {
         margin: 20px;
