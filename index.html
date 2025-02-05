@@ -3,33 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Body Type Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Body Type & Fashion Recommendation</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="calculator">
-        <h2>Body Type Calculator</h2>
-        <form id="calculator-form">
-            <label for="shoulder">Shoulder (cm):</label>
-            <input type="number" id="shoulder" required>
-            
-            <label for="waist">Waist (cm):</label>
-            <input type="number" id="waist" required>
-            
-            <label for="hip">Hip (cm):</label>
-            <input type="number" id="hip" required>
-            
-            <button type="submit">Calculate</button>
-        </form>
-        
-        <div id="result">
-            <p id="body-type-text"></p>
-            <img id="body-type-image" src="" alt="Body Type Image" style="display:none;">
-            <p id="color-suggestions"></p>
-            <p id="occasion-suggestions"></p>
-        </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header Section -->
+        <header>
+            <h1>Body Type & Fashion Recommendation</h1>
+            <p>Enter your body measurements and select the occasion for personalized recommendations.</p>
+        </header>
+
+        <!-- Form Section -->
+        <section class="form-container">
+            <label for="shoulder">Shoulder Measurement (in inches):</label>
+            <input type="number" id="shoulder" placeholder="Enter shoulder size">
+
+            <label for="waist">Waist Measurement (in inches):</label>
+            <input type="number" id="waist" placeholder="Enter waist size">
+
+            <label for="hip">Hip Measurement (in inches):</label>
+            <input type="number" id="hip" placeholder="Enter hip size">
+
+            <label for="occasion">Select Occasion:</label>
+            <select id="occasion">
+                <option value="Casual">Casual</option>
+                <option value="Formal">Formal</option>
+                <option value="Party">Party</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Office Wear">Office Wear</option>
+            </select>
+
+            <button onclick="generateRecommendation()">Get Recommendation</button>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result-container" class="result-container">
+            <div id="recommendation"></div>
+            <img id="bodyTypeImage" src="" alt="Body Type" style="display: none; width: 100%; margin-top: 20px;">
+        </section>
+
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-
