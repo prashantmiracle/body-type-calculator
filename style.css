@@ -66,10 +66,11 @@ input, select {
 }
 
 input:focus, select:focus {
-    border-color: #0A74DA; /* Blue focus border */
+    border-color: #0A74DA;  /* Blue focus border */
     outline: none;
 }
 
+/* Button Styling */
 button {
     background-color: #0A74DA; /* Masculine blue */
     color: white;
