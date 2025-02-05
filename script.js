@@ -5,10 +5,14 @@ function generateRecommendation() {
     let occasion = document.getElementById("occasion").value;
     let bodyTypeImage = document.getElementById("bodyTypeImage");
 
+    // Hide the image initially when the form is submitted
+    bodyTypeImage.style.display = "none";
+    document.getElementById("recommendation").innerHTML = "";  // Clear previous recommendation
+    document.getElementById("colorRecommendation").innerHTML = "";  // Clear previous color recommendations
+
+    // Check for missing input
     if (!shoulder || !waist || !hip) {
         document.getElementById("recommendation").innerHTML = "Please enter all measurements.";
-        document.getElementById("colorRecommendation").innerHTML = "";
-        bodyTypeImage.style.display = "none";
         return;
     }
 
@@ -61,7 +65,7 @@ function generateRecommendation() {
     document.getElementById("colorRecommendation").innerHTML = 
         `<p><strong>Color Recommendation:</strong> ${colorRecommendation}</p>`;
 
-    // Show Image
+    // Show Image after recommendation
     bodyTypeImage.src = bodyImagePath;
-    bodyTypeImage.style.display = "block";
+    bodyTypeImage.style.display = "block";  // Only show after the recommendation is generated
 }
