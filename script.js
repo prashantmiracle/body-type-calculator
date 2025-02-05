@@ -1,47 +1,55 @@
-document.getElementById('calculator-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const shoulder = parseFloat(document.getElementById('shoulder').value);
-    const waist = parseFloat(document.getElementById('waist').value);
-    const hip = parseFloat(document.getElementById('hip').value);
+function generateRecommendation() {
+    let shoulder = document.getElementById("shoulder").value;
+    let waist = document.getElementById("waist").value;
+    let hip = document.getElementById("hip").value;
+    let occasion = document.getElementById("occasion").value;
+    let bodyTypeImage = document.getElementById("bodyTypeImage");
 
-    if (isNaN(shoulder) || isNaN(waist) || isNaN(hip)) {
-        alert("Please enter valid numbers for all fields.");
+    if (!shoulder || !waist || !hip) {
+        document.getElementById("recommendation").innerHTML = "Please enter all measurements.";
+        bodyTypeImage.style.display = "none";
         return;
     }
 
-    let bodyType = '';
-    let bodyImage = '';
-    let colorSuggestion = '';
-    let occasionSuggestion = '';
-
+    let bodyType = "";
+    let bodyImagePath = "";
     if (shoulder > hip && shoulder > waist) {
-        bodyType = 'Inverted Triangle';
-        bodyImage = 'images/inverted_triangle.png';
-        colorSuggestion = 'Dark tops & light bottoms (Navy, Black, Deep Greens).';
-        occasionSuggestion = 'Best for formal events & casual outings.';
+        bodyType = "Inverted Triangle";
+        bodyImagePath = "images/inverted_triangle.png";
     } else if (hip > shoulder && hip > waist) {
-        bodyType = 'Pear';
-        bodyImage = 'images/pear.png';
-        colorSuggestion = 'Light tops & dark bottoms (Pastels, Whites, Soft Pinks).';
-        occasionSuggestion = 'Ideal for workwear, parties, and daily wear.';
-    } else if (waist < shoulder && waist < hip) {
-        bodyType = 'Hourglass';
-        bodyImage = 'images/hourglass.png';
-        colorSuggestion = 'Monochromatic & bold shades (Red, Teal, Royal Blue).';
-        occasionSuggestion = 'Perfect for weddings, date nights, and business meetings.';
+        bodyType = "Pear Shape";
+        bodyImagePath = "images/pear.png";
+    } else if (shoulder === hip && waist < shoulder) {
+        bodyType = "Hourglass Shape";
+        bodyImagePath = "images/hourglass.png";
     } else {
-        bodyType = 'Rectangle';
-        bodyImage = 'images/rectangle.png';
-        colorSuggestion = 'Contrast & bright shades (Coral, Emerald, Prints).';
-        occasionSuggestion = 'Great for outdoor events, beachwear, and casual wear.';
+        bodyType = "Rectangle Shape";
+        bodyImagePath = "images/rectangle.png";
     }
 
-    document.getElementById('body-type-text').innerText = `Your body type is: ${bodyType}`;
-    document.getElementById('color-suggestions').innerText = `Recommended Colors: ${colorSuggestion}`;
-    document.getElementById('occasion-suggestions').innerText = `Best Occasions: ${occasionSuggestion}`;
+    let outfitRecommendation = "";
+    switch (occasion) {
+        case "Casual":
+            outfitRecommendation = "Choose comfortable and stylish outfits like jeans and a flowy top.";
+            break;
+        case "Formal":
+            outfitRecommendation = "Opt for structured blazers, fitted dresses, and elegant silhouettes.";
+            break;
+        case "Party":
+            outfitRecommendation = "Go for bold colors, sequins, or bodycon dresses.";
+            break;
+        case "Wedding":
+            outfitRecommendation = "Elegant sarees, gowns, or ethnic wear with intricate details.";
+            break;
+        case "Office Wear":
+            outfitRecommendation = "Choose tailored outfits like pencil skirts, blazers, and formal tops.";
+            break;
+    }
 
-    const bodyImageElement = document.getElementById('body-type-image');
-    bodyImageElement.src = bodyImage;
-    bodyImageElement.style.display = 'block';
-});
+    document.getElementById("recommendation").innerHTML = 
+        `<p>Your body type is: <strong>${bodyType}</strong></p>
+         <p>Recommended outfit for ${occasion}: <strong>${outfitRecommendation}</strong></p>`;
+
+    bodyTypeImage.src = bodyImagePath;
+    bodyTypeImage.style.display = "block";
+}
