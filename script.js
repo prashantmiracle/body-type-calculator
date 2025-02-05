@@ -5,12 +5,14 @@ function generateRecommendation() {
     let occasion = document.getElementById("occasion").value;
     let bodyTypeImage = document.getElementById("bodyTypeImage");
 
+    // Check for empty fields
     if (!shoulder || !waist || !hip) {
         document.getElementById("recommendation").innerHTML = "Please enter all measurements.";
         bodyTypeImage.style.display = "none";
         return;
     }
 
+    // Determine Body Type
     let bodyType = "";
     let bodyImagePath = "";
     if (shoulder > hip && shoulder > waist) {
@@ -27,6 +29,7 @@ function generateRecommendation() {
         bodyImagePath = "images/rectangle.png";
     }
 
+    // Outfit Recommendation Based on Occasion
     let outfitRecommendation = "";
     switch (occasion) {
         case "Casual":
@@ -46,10 +49,12 @@ function generateRecommendation() {
             break;
     }
 
+    // Display Results
     document.getElementById("recommendation").innerHTML = 
         `<p>Your body type is: <strong>${bodyType}</strong></p>
          <p>Recommended outfit for ${occasion}: <strong>${outfitRecommendation}</strong></p>`;
 
+    // Show Image
     bodyTypeImage.src = bodyImagePath;
     bodyTypeImage.style.display = "block";
 }
